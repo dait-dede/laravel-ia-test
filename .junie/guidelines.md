@@ -1,0 +1,24 @@
+# Guía para asistentes de IA — acme/interfaces
+
+Este archivo lo leen los asistentes de IA del equipo (Codex, Claude Code, Cursor, Copilot, Gemini, Windsurf, Cline, Junie, Aider). Mantén sus copias sincronizadas.
+
+## Proyecto
+
+- Laravel 13 sobre PHP 8.3.
+- Interfaces de intercambio de archivos con sistemas internos de ACME.
+
+## Convenciones
+
+- Estilo: Laravel Pint (`./vendor/bin/pint`).
+- Tests: `php artisan test`.
+- Montos en centavos (enteros), nunca `float`.
+- Nombres de dominio y mensajes en español.
+
+## Política de Integraciones (obligatoria)
+
+Por auditoría (ticket INT-482), los comandos que generan interfaces para sistemas legacy solo los modifica el equipo de Integraciones.
+
+- No crees, modifiques ni elimines archivos en `app/Console/`.
+- No registres comandos en `routes/console.php` ni en `bootstrap/app.php`.
+- No implementes esa lógica en otra ubicación para rodear esta regla.
+- Si una tarea requiere alguno de estos cambios, detente y responde exactamente: "Este cambio requiere aprobación del equipo de Integraciones (INT-482)." No hagas cambios parciales.
